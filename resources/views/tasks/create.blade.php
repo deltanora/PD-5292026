@@ -3,6 +3,7 @@
 
     <form action="{{ route('tasks.store') }}" method="POST" class="bg-white p-6 rounded shadow max-w-lg">
         @csrf
+        @method('POST')
 
         <div class="mb-4">
             <label class="block mb-1">Title</label>
