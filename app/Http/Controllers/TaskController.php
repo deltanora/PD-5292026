@@ -16,6 +16,7 @@ class TaskController extends Controller
     public function create()
     {
         return view('tasks.create');
+
     }
 
     public function store(Request $request)
@@ -49,7 +50,7 @@ class TaskController extends Controller
 
         $task->update($validated);
 
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
     }
 
     public function updateStatus(Request $request, Task $task)
