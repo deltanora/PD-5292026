@@ -1,12 +1,12 @@
 <x-layout>
     <div class="bg-white p-6 rounded shadow max-w-2xl">
         <h2 class="text-2xl font-bold mb-2">{{ $task->title }}</h2>
-        
+
         <p class="text-gray-600 mb-4">
-            Status: 
+            Status:
             <form action="{{ route('tasks.update-status', $task->id) }}" method="POST" class="inline">
                 @csrf
-                @method('PATCH')
+                @method('POST')
                 <select name="status" class="border rounded p-1">
                     <option value="pending" {{ $task->status === 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="in_progress" {{ $task->status === 'in_progress' ? 'selected' : '' }}>In Progress</option>
