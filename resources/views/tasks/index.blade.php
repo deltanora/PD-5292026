@@ -16,6 +16,8 @@
 
                 <div class="flex gap-4">
                     <a href="{{ route('tasks.edit', $task->id) }}" class="text-blue-500">Edit</a>
+                    <a href="{{ route('tasks.copy', $task->id) }}" class="text-green-500">Copy</a>
+
 
                     <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" onsubmit="return confirm('Delete this task?')">
                         @csrf

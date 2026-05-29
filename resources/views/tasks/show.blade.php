@@ -6,7 +6,7 @@
             Status:
             <form action="{{ route('tasks.update-status', $task->id) }}" method="POST" class="inline">
                 @csrf
-                @method('POST')
+                @method('PATCH')
                 <select name="status" class="border rounded p-1">
                     <option value="pending" {{ $task->status === 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="in_progress" {{ $task->status === 'in_progress' ? 'selected' : '' }}>In Progress</option>
