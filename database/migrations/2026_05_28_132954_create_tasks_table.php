@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->timestamp('completed_at')->nullable();
+            $table->integer('copy_of')->nullable();
             $table->timestamps();
         });
     }
@@ -28,5 +29,5 @@ return new class extends Migration
         Schema::dropIfExists('tasks');
     }
 
-    
+
 };
