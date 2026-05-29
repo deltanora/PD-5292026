@@ -16,5 +16,11 @@
 
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save Task</button>
         <a href="{{ route('tasks.index') }}" class="ml-4 text-gray-500">Cancel</a>
+
+         @error('title', 'description')
+            <script type="text">
+            alert('Something went wrong');
+            </script>
+        @enderror
     </form>
 </x-layout>

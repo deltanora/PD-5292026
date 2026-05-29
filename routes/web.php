@@ -15,3 +15,7 @@ Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.e
 Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 Route::patch('/tasks/{task}/status', [TaskController::class, 'updateStatus'])->name('tasks.update-status');
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+Route::get('/alert', function () {
+    return view('tasks.create')->withErrors(['title' => 'The title field is required.', 'description' => 'The description field is required.']);
+});
